@@ -1,0 +1,41 @@
+html   <!DOCTYPE  html>   <html  lang="zh-CN">   <head>        <meta  charset="UTF-8">        <meta  name="viewport"  content="width=device-width,  initial-scale=1.0">        <title>欢迎页面</title>        <style>            body  {                background-color
+#000;                font-family
+Arial,  sans-serif;                display
+flex;                justify-content
+center;                 align-items
+center;                height
+100vh;                margin
+0;                overflow
+hidden;            }
+
+.welcome-text  {                color
+#fff;                font-size
+4rem;                margin-bottom
+1rem;            }
+
+.particles  {                position
+absolute;                width
+100%;                height
+100%;                background-color
+#000;                overflow
+hidden;                pointer-events
+none;            }
+
+.particle  {                position
+absolute;                width
+2px;                height
+2px;                background-color
+#fff;                border-radius
+50%;                 animation
+float  2s  linear  infinite;            }
+
+@keyframes  float  {                0%  {                     transform
+translateY(0)  translateX(0);                }                50%  {                     transform
+translateY(50%)  translateX(0);                }                100%  {                     transform
+translateY(0)  translateX(0);                }            }        </style>   </head>   <body>        <div  class="welcome-text">欢迎你来到这里</div>        <div  class="particles">            <div  class="particle"  style="top
+50%;  left
+25%;"></div>            <div  class="particle"  style="top
+50%;  left
+50%;"></div>            <div  class="particle"  style="top
+50%;  left
+75%;"></div>        </div>   </body>   </html>   
