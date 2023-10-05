@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>美化网页</title>
+  <script>
+  var a=1
+  </script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: brown;
+      color: #fff;
+      padding: 10px 0;
+      text-align: center;
+    }
+    nav {
+      background-color: #eee;
+      padding: 10px 0;
+    }
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li {
+      display: inline-block;
+      margin-right: 10px;
+    }
+    nav ul li a {
+      color: #333;
+      text-decoration: none;
+      padding: 5px;
+      border-bottom: 2px solid transparent;
+    }
+    nav ul li a:hover {
+      border-bottom: 2px solid #fff;
+    }
+    section {
+      padding: 20px;
+    }
+    footer {
+      background-color: #333;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>欢迎来到美化网页</h1>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="/12">首页</a></li>
+      <li><a href="#">关于</a></li>
+      <li><a href="#">联系我们</a></li>
+    </ul>
+  </nav>
+  <section>
+    <h2 onclick="alert('你已经点击了:'+a+'次');a++">文章标题</h2>
+    <p>这是一段示例文本。</p>
+  </section>
+  <footer>版权所有 &copy; 2023</footer>
+</body>
+</html>
