@@ -1,7 +1,74 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #000000;
+    }
+    .video-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height:100%;
+      overflow: hidden;
+    }
+    video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background-size: cover;
+    }
+    .overlay-text {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 24px;
+      z-index: 1;
+      
+    
+      text-shadow: 3px 3px 5px #000, -1px -1px 5px #fff;
+    }
+
+    .content {
+      
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 18px;
+    }
+      
+}
+  </style>
+</head>
+<body>
+  <div class="video-container">
+    <video autoplay loop muted>
+      <source src="home.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="overlay-text"><h3 onclick='alert("WELCOME！")'>欢迎
+  </h3><br><br>
+  这里是徐绍乾的个人网站</div>
+  <div class="content"> <b>✉️Email：</b>jyosyoukan@qq.com</div>
+  
 </body>
 </html>
+
