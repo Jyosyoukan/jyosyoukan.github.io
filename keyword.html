@@ -1,0 +1,226 @@
+<!--注意:代码模板中的代码将会被复制到任何新创建的文件中，编辑代码模板中的代码，让他帮你自动增加固定代码吧-->
+<html>
+    <head> 
+        <meta charset="UTF-8"> 
+<title>文本编辑和关键词统计小工具<title>
+        <style>
+body{border-style:inset;border-radius:0px;border:10px solid rgb(30%,30%,70%);margin:2px;
+}
+button{background:blue;border-style:inset;border-radius:3px;color:white;font-size:20px;
+}
+button:hover{background:rgb(100%,90%,50%)
+}
+   
+   textarea{background:rgb(0,10,10);border-style:none;border-radius:3px;color:white;font-size:10px;width:100%;height:30%;
+} 
+input{background:rgb(10%,100%,90%);border-style:none;border-bottom-style:solid;color:grey;font-size:15px
+}
+
+h1{border-style:none;border-radius:3px;color:yellow;font-size:35px;text-shadow:3px 3px rgb(0,225,225);text-align:center
+}
+p{border-style:none;color:black;font-size:23px
+}
+audio{border-style:none;background-image:linear-gradient(to right,green,purple);border-radius:3px;
+}
+audio:hover{border-style:none;background-image:linear-gradient(to right,red,blue);border-radius:3px;
+}
+
+</style>
+    </head> 
+
+<script>
+    var bron=new Array(),nbm=0,out=""
+function go(a){
+    if(a=="k"){
+        var sert=mm.value 
+        var sert2=sert.substr(0,1)
+        sert=sert.substr(1,1)
+        send("m",takeaway(deta.value,sert2,sert))
+        sert=undefined
+        sert2=undefined
+    }else if(a=='tp'){
+        var sert,sert2,mnl,kl,sert3
+        mnl=mm.value
+        sert2=mnl.indexOf("@")
+        sert=mnl.substr(0,sert2)
+        sert3=mnl.length
+        kl=mnl.substr(sert2+1,sert3-sert2)
+      //  sert="\"+sert
+        var se=new RegExp(sert)
+        out=deta.value,ooop=0
+        //while(out.indexOf(sert)!=-1){
+            
+
+            var dex=setInterval(function(){
+                
+                                 out=out.replace(se,kl)
+         send("m2",out)
+         ooop++
+         if(out.indexOf(sert)==-1){
+             clearInterval(dex)
+             alert('已完成✅/'+'一共'+ooop+'组替换')
+         }
+     },10000/deta.value.length)
+         //}
+     
+    }else if(a=='t'){
+        var sert=mm.value,detas=deta.value 
+        if(sert.indexOf("abc")!=-1){
+            sert=sert.replace(/abc/g,'')
+             out=detas.replace(/[a-z]/g,sert)
+             send("m2",out)
+        }else if(sert.indexOf("123")!=-1){
+                        sert=sert.replace(/123/g,'')
+             out=detas.replace(/[0-9]/g,sert)
+             send("m2",out)
+        
+    }else if(sert.indexOf("~")!=-1){
+                sert=sert.replace(/~/g,'')
+             out=detas.replace(/\s/g,sert)
+             send("m2",out)
+}
+}
+}
+
+function takeaway(detas,a,b){
+    nbm=0
+    //detas=the information that need to change,a=left(,b=right),leftv=the text that in front of the(,rightv=the text that behindthe ),leftn=the place num of the (,rightn=the place num of the ),cerv=the text that in the (),l=the long of the detas,out=the text that put up to the outside,unl=the underline that used to replace the cerv,wn=the free num value 
+    var leftv,rightv,leftn,rightn,cerv,l,out,unl,wn=0
+    out=""
+    while(detas.indexOf(a)!=-1&detas.indexOf(b)!=-1)
+    {
+    l=detas.length
+    leftn=detas.indexOf(a)
+    rightn=detas.indexOf(b)
+    leftv=detas.substr(0,leftn)
+    rightv=detas.substr(rightn+1,l-rightn)
+    cerv=detas.substr(leftn+1,rightn-leftn-1)
+    bron[nbm]=cerv
+    nbm++
+    wn=cerv.length
+    unl=""
+    while(wn>0){
+        wn-=1
+        unl+="_"//替换成的，可改
+    }
+out+=leftv+a+unl+b
+//finish a time of programe
+detas=rightv
+//the detas for next time programe
+}
+nbm=bron.length
+var ed=""
+while(nbm>=0){
+    ed=bron[nbm]+"</br>"+ed
+    nbm-=1
+}
+send("kk",ed)
+return out
+}
+function replacen(detas,ac,tom)
+{
+    //detas = the information that need to change ,ac=正则,tom=替换成的文本
+     out
+    out=detas.replace(ac,tom)
+    
+}
+
+function send(id,e){
+            document.getElementById(id).innerHTML=e
+}
+function get(id){
+                return document.getElementById(id).innerHTML;
+}
+function suiji(da,xiao){
+   return Math.round(Math.random()*(da-xiao)+xiao);
+}
+function keyword(d){
+    var dov,n=0,m=0,km,nam=new Array(),tim=new Array(),o=0,bh=100,kp=new Array(),et=0
+while(n<=d.length){
+    dov=d.substr(n,2)
+    nam[n]=dov
+    n++
+}
+n=0
+    while(n<d.length){
+    dov=nam[n]
+    km=d 
+    //-------------
+                   while(km.indexOf(dov)!=-1){
+    km=km.replace(dov,'')
+    m++
+    if(m>bh){
+        bh+=100
+    var outy=confirm(dov)
+            if(outy==false){
+                return;
+            }
+    }
+                }
+                //-----------
+                kp[n]=m
+                if(tim[m]!=undefined){   
+                if(tim[m].indexOf(dov)==-1){
+                tim[m]=tim[m]+"#"+dov
+                }
+                    }else{
+                        tim[m]=dov
+                    }
+    m=0
+    n++
+    }
+    n=1
+    m=0
+    o=0
+     var ou=""
+    while(n<=tim.length){
+        if(tim[n]!=undefined){
+           ou=   '   <rect width="500"height="10"x="100"y="'+(55+m)+'"fill="rgb(80%,80%,86%)"stroke="blue"/>'+'  <text  x="40"y="'+(35+m)+'" fill="darkblue">'+n+"次     "+tim[n]+'</text>'+'   <rect id="'+nam[n]+'" width="'+500*n/d.length+'"height="9"x="100"y="'+(55+m)+'"fill="skyblue"/>'+ou
+            //ou=tim[n]+"<ol col tapy='1'>"+n+""+ou+""
+        m+=50
+        }
+        n++
+    }
+    
+
+    ou+=""
+    send("m",ou)
+}
+var detaed="abnmabnklabmk"
+function dot(){
+    send("deta",out)
+}
+</script>
+    <body>
+        <h1>关键词统计小工具</h1>
+        <small>           🙃由徐绍乾@jyosyoukan 开发</small><br>
+           <input type='text' id='mm' value="我校@大连24"><br><button onclick='go("k")'> 用（）制作试卷</button><small id="pff"></small>
+    <br>
+        <button onclick="go('t')">🙃特殊替换</button>  
+        </br>
+        ⭐️方法：在小框中输入abc-表示把字母全化成“-”
+        abc 字母，123 数字，～空格
+        </br>
+          <button onclick="go('tp')">替换</button>◀️点击按钮试一试吧😊
+          </br>
+          ⭐️方法：在小框中输入：s@e，就是把“s”全化成“e”</br>
+          <button onclick="keyword(deta.value)">keyword</button>
+           🤩这是一个很好用的工具，快点击按钮试一试吧    <br>     <button onclick="dot()">📔使用输出数据继续处理</button>
+      
+    <em id="kk"></em>
+    <textarea type='text' id='deta' rows="10"cols="40">2017年高考本科第一批次录取工作已经基本结束，大连二十四中喜讯频传。继2015年、2016年我校分别以38人、44人的清华、北大录取人数领先辽宁后，今年我校再次以39名学生被清华、北大录取的成绩获得辽宁第一。本届高三共441人（含艺体特长生）参加高考，清华、北大录取人数占报考人数的近9%。</textarea><br>
+    输出如下：
+    <hr>
+    <textarea id="m2"></textarea>
+    <svg id="m"height="9000"width="900">
+    <rect id="name" width="400"height="9"x="90"y="90"fill="skyblue"/>
+    <text x="90"y="90" fill="darkblue">
+    📌结果将在这里显示
+    
+    </text>
+    </svg>
+    </br>
+    
+ 
+    </body>
+</html>
