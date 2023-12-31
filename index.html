@@ -1,19 +1,42 @@
 <!DOCTYPE html>
-<HTML>
+<html>
 <head>
-  <title>🙃Hi JyoSyouKan🙂</title>
+      <script>
+          function turn() {
+              var t = document.getElementById('t')
+              window.open('https://cn.bing.com/search?q=' + t.value)
+          }
+      </script>  
   <style>
     body {
       margin: 0;
       padding: 0;
       background-color: #000000;
     }
+    input:hover{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+input:active{
+    color:white;
+    background-color: blue;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+
+}
+input {
+    width: 150px;
+    height: 30px;
+    color: blue;
+    border-radius: 25px;
+    background-color: rgba(0, 10, 225, 0.1);
+    border: 1px solid blue;
+
+}
     .video-container {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
-      height:80%;
+      height:100%;
       overflow: hidden;
     }
     video {
@@ -30,7 +53,7 @@
       top: 0;
       left: 0;
       width: 100%;
-      height: 67%;
+      height: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -40,7 +63,28 @@
       
     
       text-shadow: 3px 3px 5px #000, -1px -1px 5px #fff;
+      
+      animation: l-animation 1.5s ease-in-out 1 forwards;
     }
+    
+        form {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 70%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 24px;
+            z-index: 1;
+    
+    
+            text-shadow: 3px 3px 5px #000, -1px -1px 5px #fff;
+    
+            animation: l-animation 1.5s ease-in-out 1 forwards;
+        }
 
     .content {
       
@@ -48,26 +92,71 @@
       bottom: 0;
       left: 0;
       width: 100%;
-      height: 85%;
+      height: 50%;
       display: flex;
       justify-content: center;
       align-items: center;
       color: white;
       font-size: 18px;
+      
+      animation: r-animation 1.5s ease-in-out 1 forwards;
     }
       
+}
+
+
+
+
+@keyframes title-animation {
+  0% {
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes l-animation {
+  0% {
+    transform: translateX(-20%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes r-animation {
+  0% {
+    transform: translateX(16%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
   </style>
 </head>
 <body>
   <div class="video-container">
-
-    <img src="home.gif"class="video-container">
+    <video autoplay loop muted>
+      <source src="./home.mp4" type="video/mp4">
+    </video>
   </div>
   <div class="overlay-text"><h3 onclick='alert("WELCOME！")'>欢迎
   </h3><br><br>
-  这里是徐绍乾的个人网站</div>
+  这里是徐绍乾的个人网站
+      <form>
+          <input type="text" name="query" id="t" placeholder="输入关键词" required>
+          <input type="submit" value="搜索" onclick="turn()">
+      </form>
+  <small onclick="window.open('http://jyosyoukan.github.io/link')"style="font-size: 10px">
+👉点我
+  </small>
   <div class="content"> <b>✉️Email：</b>jyosyoukan@qq.com</div>
+   </div>
 </body>
-</HTML>
+</html>
 
